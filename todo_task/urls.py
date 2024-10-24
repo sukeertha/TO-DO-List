@@ -11,5 +11,8 @@ urlpatterns =[
     path('mark_as_undone/<int:pk>/', views.mark_as_undone,name='mark_as_undone'),
 
     # Edit feature
-    path('edit/<int:pk>/',views.edit, name='edit')
+    path('edit/<int:pk>/',views.edit, name='edit'),
+
+    #delete fearure
+    path('delete/<int:pk>',views.delete, name='delete')
 ]

@@ -27,8 +27,12 @@ def edit(request,pk):
         new_task = request.POST['add_task']
         get_task.task = new_task
         get_task.save()
-        print("Task saved successfully")
         return redirect('home')
     else:
         context = {'get_task':get_task}
-    return render(request, 'edit.html',context)
+        return render(request,'edit.html',context)
+
+def delete(request,pk):
+    task = get_object_or_404(taskes,pk=pk)
+    task.delete()
+    return redirect('home')
